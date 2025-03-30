@@ -2,13 +2,11 @@ import { useState, useRef, useEffect } from 'react';
 import './App.css';
 
 function App() {
-  const [currentMusicDetails, setCurrentMusicDetails] 
-  = useState({
+  const [currentMusicDetails, setCurrentMusicDetails] = useState({
     songName: 'Give Me Chance - (CeeNaija.com).mp3',
     songArtist: 'Bidemi Olaoba ft. Mercy Chinwo',
     songSrc: './Assets/songs/Bidemi-Olaoba-feat-Mercy-Chinwo-Give-Me-Chance-(CeeNaija.com).mp3',
     songAvatar: './Assets/images/Bidemi Olaoba ft. Mercy Chinwo - Give Me Chance 2.webp',
-    // musicProgress: 60
   });
 
   // UseState for Audio Progress
@@ -26,17 +24,7 @@ function App() {
 
   const handleMusicProgress = (e) => {
     setAudioProgress(e.target.value);
-    currentAudio.current.currentTime 
-    = e.target.value * currentAudio.current.duration / 100;
-  };
-
-  // Change Avatar Class
-  const handleAvatarClass = () => {
-    if (avatarClassIndex >= avatarClass.length - 1) {
-      setAvatarClassIndex(0);
-    } else {
-      setAvatarClassIndex(avatarClassIndex + 1);
-    }
+    currentAudio.current.currentTime = e.target.value * currentAudio.current.duration / 100;
   };
 
   const handleAvatar = () => {
@@ -92,17 +80,20 @@ function App() {
       songSrc: './Assets/songs/Inspired (Clean) - NEFFEX.mp3',
       songAvatar: './Assets/images/image7.jpg'
     },
-    {songName: 'Give Me Chance - (CeeNaija.com).mp3',
+    {
+      songName: 'Give Me Chance - (CeeNaija.com).mp3',
       songArtist: 'Bidemi Olaoba ft. Mercy Chinwo',
       songSrc: './Assets/songs/Bidemi-Olaoba-feat-Mercy-Chinwo-Give-Me-Chance-(CeeNaija.com).mp3',
       songAvatar: './Assets/images/Bidemi Olaoba ft. Mercy Chinwo - Give Me Chance 2.webp'
     },
-    {songName: 'City Of God',
+    {
+      songName: 'City Of God',
       songArtist: ' Dunsin Oyekan',
       songSrc: './Assets/songs/City-Of-God-Dunsin-Oyekan (1).mp3',
       songAvatar: './Assets/images/Dunsin Oyekan - City of God 2.jpg'
     },
-    {songName: 'Ebenezer (Live)',
+    {
+      songName: 'Ebenezer (Live)',
       songArtist: 'Nathaniel Bassey ft Victoria Orenze',
       songSrc: './Assets/songs/Nathaniel-Bassey-Ft-Victoria-Orenze-Ebenezer-Live-(TrendyBeatz.com).mp3',
       songAvatar: './Assets/images/Ebenezer.jpg.jpg'
@@ -151,51 +142,36 @@ function App() {
 
   const handleAudioUpdate = () => {
     // Update current time
-    let currentMinutes =
-    Math.floor(currentAudio.current.currentTime / 60);
-    let currentSeconds =
-    Math.floor(currentAudio.current.currentTime
-      - currentMinutes * 60);
-    let formattedCurrentTime = `${currentMinutes < 10 ?
-      '0' + currentMinutes : currentMinutes}
-      :${currentSeconds < 10 ?
-        '0' + currentSeconds : currentSeconds}`;
+    let currentMinutes = Math.floor(currentAudio.current.currentTime / 60);
+    let currentSeconds = Math.floor(currentAudio.current.currentTime - currentMinutes * 60);
+    let formattedCurrentTime = `${currentMinutes < 10 ? '0' + currentMinutes : currentMinutes}:${currentSeconds < 10 ? '0' + currentSeconds : currentSeconds}`;
     setCurrentTime(formattedCurrentTime);
 
     // Update total length
-    let totalMinutes =
-    Math.floor(currentAudio.current.duration
-      / 60);
-    let totalSeconds =
-    Math.floor(currentAudio.current.duration
-      - totalMinutes * 60);
-    let formattedTotalLength =
-    `${totalMinutes < 10 ? '0'
-      + totalMinutes : totalMinutes}:${totalSeconds < 10 ?
-        '0' + totalSeconds : totalSeconds}`;
+    let totalMinutes = Math.floor(currentAudio.current.duration / 60);
+    let totalSeconds = Math.floor(currentAudio.current.duration - totalMinutes * 60);
+    let formattedTotalLength = `${totalMinutes < 10 ? '0' + totalMinutes : totalMinutes}:${totalSeconds < 10 ? '0' + totalSeconds : totalSeconds}`;
     setTotalLength(formattedTotalLength);
 
     // Update audio progress
-    const progress = (currentAudio.current.currentTime
-      / currentAudio.current.duration) * 100;
+    const progress = (currentAudio.current.currentTime / currentAudio.current.duration) * 100;
     setAudioProgress(progress);
   };
 
   useEffect(() => {
     // Set initial total length when the component mounts
     if (currentAudio.current) {
-      currentAudio.current.addEventListener('loadedmetadata',
-        handleAudioUpdate);
+      currentAudio.current.addEventListener('loadedmetadata', handleAudioUpdate);
     }
   }, []);
 
-  const vidArray = ['./Assets/videos/video1.mp4',
-    './Assets/videos/video2.mp4',
-    './Assets/videos/video3.mp4',
-    './Assets/videos/video4.mp4',
-    './Assets/videos/video5.mp4',
-    './Assets/videos/video3.mp4',
-    './Assets/videos/video7.mp4',]; 
+  const vidArray = ['/Assets/videos/video1.mp4',
+    '/Assets/videos/video2.mp4',
+    '/Assets/videos/video3.mp4',
+    '/Assets/videos/video4.mp4',
+    '/Assets/videos/video5.mp4',
+    '/Assets/videos/video3.mp4',
+    '/Assets/videos/video7.mp4']; 
 
   const handleChangeBackground = () => {
     if (videoIndex >= vidArray.length - 1) {
@@ -205,63 +181,50 @@ function App() {
     }
   }
 
-
   return (
-    <>git add <div className="cle"></div>
-      <div className="container">
-        <audio src={currentMusicDetails.songSrc}
-          ref={currentAudio} onEnded={handleNextSong}
-          onTimeUpdate={handleAudioUpdate}></audio>
-        <video src={vidArray[videoIndex]}
+    <div className="container">
+      <audio src={currentMusicDetails.songSrc}
+        ref={currentAudio} onEnded={handleNextSong}
+        onTimeUpdate={handleAudioUpdate}></audio>
+      <video src={vidArray[videoIndex]}
         autoPlay muted loop 
         className="backgroundVideo"></video>
-        <div className="blackScreen"></div>
-        <div className="music-Container">
-          <p className="musicPlayer">Faseal Music Player</p>
-          <p className="music-Head-Name"
-          >{currentMusicDetails.songName}</p>
-          <p className="music-Artist-Name"
-          >{currentMusicDetails.songArtist}</p>
-          <img
-            src={currentMusicDetails.songAvatar}
-            className={avatarClass[avatarClassIndex]}
-            onClick={handleAvatar}
-            alt="Song Avatar"
-            id="songAvatar"
-          />
-          <div className="musicTimerDiv">
-            <p className="musicCurrentTime">{currentTime}</p>
-            <p className="musicTotalLength">{totalLength}</p>
-          </div>
-          <input
-            type="range"
-            name="musicProgressBar"
-            className="musicProgressBar"
-            value={audioProgress}
-            onChange={handleMusicProgress}
-          />
-          <div className="musicControllers">
-            <i className="fa-solid fa-backward
-            musicController" onClick={handlePrevSong}></i>
-            <i
-              className={`fa-solid ${isAudioPlaying ?
-                'fa-pause-circle' :
-                'fa-circle-play'} playBtn`}
-              onClick={handleAudioPlay}
-            ></i>
-            <i className="fa-solid fa-forward
-            musicController" onClick={handleNextSong}></i>
-          </div>
-          {/* <div className="changeBackBtn"
-          onClick={handleAvatarClass}>
-            Change Background */}
-            <div className="changeBackBtn"
-          onClick={handleChangeBackground}>
-            Change Background
-          </div>
+      <div className="blackScreen"></div>
+      <div className="music-Container">
+        <p className="musicPlayer">Faseal Music Player</p>
+        <p className="music-Head-Name">{currentMusicDetails.songName}</p>
+        <p className="music-Artist-Name">{currentMusicDetails.songArtist}</p>
+        <img
+          src={currentMusicDetails.songAvatar}
+          className={avatarClass[avatarClassIndex]}
+          onClick={handleAvatar}
+          alt="Song Avatar"
+          id="songAvatar"
+        />
+        <div className="musicTimerDiv">
+          <p className="musicCurrentTime">{currentTime}</p>
+          <p className="musicTotalLength">{totalLength}</p>
+        </div>
+        <input
+          type="range"
+          name="musicProgressBar"
+          className="musicProgressBar"
+          value={audioProgress}
+          onChange={handleMusicProgress}
+        />
+        <div className="musicControllers">
+          <i className="fa-solid fa-backward musicController" onClick={handlePrevSong}></i>
+          <i
+            className={`fa-solid ${isAudioPlaying ? 'fa-pause-circle' : 'fa-circle-play'} playBtn`}
+            onClick={handleAudioPlay}
+          ></i>
+          <i className="fa-solid fa-forward musicController" onClick={handleNextSong}></i>
+        </div>
+        <div className="changeBackBtn" onClick={handleChangeBackground}>
+          Change Background
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
