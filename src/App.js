@@ -5,13 +5,8 @@ function App() {
   const [currentMusicDetails, setCurrentMusicDetails] = useState({
     songName: 'Give Me Chance - (CeeNaija.com).mp3',
     songArtist: 'Bidemi Olaoba ft. Mercy Chinwo',
-<<<<<<< HEAD
     songSrc: '/Assets/songs/Bidemi-Olaoba-feat-Mercy-Chinwo-Give-Me-Chance-(CeeNaija.com).mp3',
     songAvatar: '/Assets/images/Bidemi Olaoba ft. Mercy Chinwo - Give Me Chance 2.webp',
-=======
-    songSrc: 'public/Assets/songs/Bidemi-Olaoba-feat-Mercy-Chinwo-Give-Me-Chance-(CeeNaija.com).mp3',
-    songAvatar: 'public/Assets/images/Bidemi Olaoba ft. Mercy Chinwo - Give Me Chance 2.webp',
->>>>>>> 61f829c096bad12492533e0252b9737be8d3dd3f
   });
 
   // UseState for Audio Progress
@@ -88,37 +83,21 @@ function App() {
     {
       songName: 'Give Me Chance - (CeeNaija.com).mp3',
       songArtist: 'Bidemi Olaoba ft. Mercy Chinwo',
-<<<<<<< HEAD
       songSrc: '/Assets/songs/Bidemi-Olaoba-feat-Mercy-Chinwo-Give-Me-Chance-(CeeNaija.com).mp3',
       songAvatar: '/Assets/images/Bidemi Olaoba ft. Mercy Chinwo - Give Me Chance 2.webp',
-=======
-      songSrc: 'public/Assets/songs/Bidemi-Olaoba-feat-Mercy-Chinwo-Give-Me-Chance-(CeeNaija.com).mp3',
-      songAvatar: 'public/Assets/images/Bidemi Olaoba ft. Mercy Chinwo - Give Me Chance 2.webp'
->>>>>>> 61f829c096bad12492533e0252b9737be8d3dd3f
     },
     {
       songName: 'City Of God',
       songArtist: 'Dunsin Oyekan',
-<<<<<<< HEAD
       songSrc: '/Assets/songs/City-Of-God-Dunsin-Oyekan (1).mp3',
       songAvatar: '/Assets/images/Dunsin Oyekan - City of God 2.jpg',
-=======
-      songSrc: 'public/Assets/songs/City-Of-God-Dunsin-Oyekan (1).mp3',
-      songAvatar: 'public/Assets/images/Dunsin Oyekan - City of God 2.jpg'
->>>>>>> 61f829c096bad12492533e0252b9737be8d3dd3f
     },
     {
       songName: 'Ebenezer (Live)',
       songArtist: 'Nathaniel Bassey ft Victoria Orenze',
-<<<<<<< HEAD
       songSrc: '/Assets/songs/Nathaniel-Bassey-Ft-Victoria-Orenze-Ebenezer-Live-(TrendyBeatz.com).mp3',
       songAvatar: '/Assets/images/Ebenezer.jpg.jpg',
     },
-=======
-      songSrc: 'public/Assets/songs/Nathaniel-Bassey-Ft-Victoria-Orenze-Ebenezer-Live-(TrendyBeatz.com).mp3',
-      songAvatar: 'public/Assets/images/Ebenezer.jpg.jpg'
-    }
->>>>>>> 61f829c096bad12492533e0252b9737be8d3dd3f
   ];
 
   const updateCurrentMusicDetails = (number) => {
