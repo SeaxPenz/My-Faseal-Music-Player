@@ -5,8 +5,8 @@ function App() {
   const [currentMusicDetails, setCurrentMusicDetails] = useState({
     songName: 'Give Me Chance - (CeeNaija.com).mp3',
     songArtist: 'Bidemi Olaoba ft. Mercy Chinwo',
-    songSrc: '/Assets/songs/Bidemi-Olaoba-feat-Mercy-Chinwo-Give-Me-Chance-(CeeNaija.com).mp3',
-    songAvatar: '/Assets/images/Bidemi Olaoba ft. Mercy Chinwo - Give Me Chance 2.webp',
+    songSrc: 'public/Assets/songs/Bidemi-Olaoba-feat-Mercy-Chinwo-Give-Me-Chance-(CeeNaija.com).mp3',
+    songAvatar: 'public/Assets/images/Bidemi Olaoba ft. Mercy Chinwo - Give Me Chance 2.webp',
   });
 
   // UseState for Audio Progress
@@ -47,20 +47,20 @@ function App() {
     {
       songName: 'Give Me Chance - (CeeNaija.com).mp3',
       songArtist: 'Bidemi Olaoba ft. Mercy Chinwo',
-      songSrc: '/Assets/songs/Bidemi-Olaoba-feat-Mercy-Chinwo-Give-Me-Chance-(CeeNaija.com).mp3',
-      songAvatar: '/Assets/images/Bidemi Olaoba ft. Mercy Chinwo - Give Me Chance 2.webp'
+      songSrc: 'public/Assets/songs/Bidemi-Olaoba-feat-Mercy-Chinwo-Give-Me-Chance-(CeeNaija.com).mp3',
+      songAvatar: 'public/Assets/images/Bidemi Olaoba ft. Mercy Chinwo - Give Me Chance 2.webp'
     },
     {
       songName: 'City Of God',
       songArtist: 'Dunsin Oyekan',
-      songSrc: '/Assets/songs/City-Of-God-Dunsin-Oyekan (1).mp3',
-      songAvatar: '/Assets/images/Dunsin Oyekan - City of God 2.jpg'
+      songSrc: 'public/Assets/songs/City-Of-God-Dunsin-Oyekan (1).mp3',
+      songAvatar: 'public/Assets/images/Dunsin Oyekan - City of God 2.jpg'
     },
     {
       songName: 'Ebenezer (Live)',
       songArtist: 'Nathaniel Bassey ft Victoria Orenze',
-      songSrc: '/Assets/songs/Nathaniel-Bassey-Ft-Victoria-Orenze-Ebenezer-Live-(TrendyBeatz.com).mp3',
-      songAvatar: '/Assets/images/Ebenezer.jpg.jpg'
+      songSrc: 'public/Assets/songs/Nathaniel-Bassey-Ft-Victoria-Orenze-Ebenezer-Live-(TrendyBeatz.com).mp3',
+      songAvatar: 'public/Assets/images/Ebenezer.jpg.jpg'
     }
   ];
 
