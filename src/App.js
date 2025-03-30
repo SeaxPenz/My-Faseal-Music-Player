@@ -5,8 +5,8 @@ function App() {
   const [currentMusicDetails, setCurrentMusicDetails] = useState({
     songName: 'Give Me Chance - (CeeNaija.com).mp3',
     songArtist: 'Bidemi Olaoba ft. Mercy Chinwo',
-    songSrc: './Assets/songs/Bidemi-Olaoba-feat-Mercy-Chinwo-Give-Me-Chance-(CeeNaija.com).mp3',
-    songAvatar: './Assets/images/Bidemi Olaoba ft. Mercy Chinwo - Give Me Chance 2.webp',
+    songSrc: '/Assets/songs/Bidemi-Olaoba-feat-Mercy-Chinwo-Give-Me-Chance-(CeeNaija.com).mp3',
+    songAvatar: '/Assets/images/Bidemi Olaoba ft. Mercy Chinwo - Give Me Chance 2.webp',
   });
 
   // UseState for Audio Progress
