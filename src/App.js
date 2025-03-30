@@ -45,59 +45,23 @@ function App() {
 
   const musicAPI = [
     {
-      songName: 'Apna Bana Le - Full Audio',
-      songArtist: 'Bhediya _ Varun Dhawan, Kriti Sanon_ Sachin-Jigar,Arijit Singh,Amitabh B',
-      songSrc: './Assets/songs/Apna Bana Le - Full Audio _ Bhediya _ Varun Dhawan, Kriti Sanon_ Sachin-Jigar,Arijit Singh,Amitabh B.webm',
-      songAvatar: './Assets/images/image2.jpg'
-    },
-    {
-      songName: 'Runaway (Lyrics)',
-      songArtist: 'AURORA',
-      songSrc: './Assets/songs/AURORA - Runaway (Lyrics).mp3',
-      songAvatar: './Assets/images/image3.jpg'
-    },
-    {
-      songName: 'Baby doll [ slowed + reverb ]',
-      songArtist: 'meet bros ,Kanika Kapoor __ jr santu',
-      songSrc: './Assets/songs/Baby doll [ slowed + reverb ] __ meet bros ,Kanika Kapoor __ jr santu.mp3',
-      songAvatar: './Assets/images/image4.jpg'
-    },
-    {
-      songName: 'Catch Me If I Fall',
-      songArtist: 'NEFFEX',
-      songSrc: './Assets/songs/Catch Me If I Fall - NEFFEX.mp3',
-      songAvatar: './Assets/images/image5.jpg'
-    },
-    {
-      songName: 'SOCH(Slowed+Reverbed)',
-      songArtist: 'Hardy Sandhu',
-      songSrc: './Assets/songs/SOCH(Slowed+Reverbed) __ Hardy Sandhu.webm',
-      songAvatar: './Assets/images/image6.jpg'
-    },
-    {
-      songName: 'Inspired (Clean)',
-      songArtist: 'NEFFEX',
-      songSrc: './Assets/songs/Inspired (Clean) - NEFFEX.mp3',
-      songAvatar: './Assets/images/image7.jpg'
-    },
-    {
       songName: 'Give Me Chance - (CeeNaija.com).mp3',
       songArtist: 'Bidemi Olaoba ft. Mercy Chinwo',
-      songSrc: './Assets/songs/Bidemi-Olaoba-feat-Mercy-Chinwo-Give-Me-Chance-(CeeNaija.com).mp3',
-      songAvatar: './Assets/images/Bidemi Olaoba ft. Mercy Chinwo - Give Me Chance 2.webp'
+      songSrc: '/Assets/songs/Bidemi-Olaoba-feat-Mercy-Chinwo-Give-Me-Chance-(CeeNaija.com).mp3',
+      songAvatar: '/Assets/images/Bidemi Olaoba ft. Mercy Chinwo - Give Me Chance 2.webp'
     },
     {
       songName: 'City Of God',
-      songArtist: ' Dunsin Oyekan',
-      songSrc: './Assets/songs/City-Of-God-Dunsin-Oyekan (1).mp3',
-      songAvatar: './Assets/images/Dunsin Oyekan - City of God 2.jpg'
+      songArtist: 'Dunsin Oyekan',
+      songSrc: '/Assets/songs/City-Of-God-Dunsin-Oyekan (1).mp3',
+      songAvatar: '/Assets/images/Dunsin Oyekan - City of God 2.jpg'
     },
     {
       songName: 'Ebenezer (Live)',
       songArtist: 'Nathaniel Bassey ft Victoria Orenze',
-      songSrc: './Assets/songs/Nathaniel-Bassey-Ft-Victoria-Orenze-Ebenezer-Live-(TrendyBeatz.com).mp3',
-      songAvatar: './Assets/images/Ebenezer.jpg.jpg'
-    },
+      songSrc: '/Assets/songs/Nathaniel-Bassey-Ft-Victoria-Orenze-Ebenezer-Live-(TrendyBeatz.com).mp3',
+      songAvatar: '/Assets/images/Ebenezer.jpg.jpg'
+    }
   ];
 
   const updateCurrentMusicDetails = (number) => {
@@ -115,8 +79,7 @@ function App() {
       currentAudio.current.play();
       setIsAudioPlaying(true);
     }, { once: true }); 
-    // Use { once: true }
-    // to ensure the event listener is removed after it is called
+
   };
 
   // Previous Song Function
