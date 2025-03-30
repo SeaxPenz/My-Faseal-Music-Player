@@ -5,8 +5,8 @@ function App() {
   const [currentMusicDetails, setCurrentMusicDetails] = useState({
     songName: 'Give Me Chance - (CeeNaija.com).mp3',
     songArtist: 'Bidemi Olaoba ft. Mercy Chinwo',
-    songSrc: './Assets/songs/Bidemi-Olaoba-feat-Mercy-Chinwo-Give-Me-Chance-(CeeNaija.com).mp3',
-    songAvatar: './Assets/images/Bidemi Olaoba ft. Mercy Chinwo - Give Me Chance 2.webp',
+    songSrc: '/Assets/songs/Bidemi-Olaoba-feat-Mercy-Chinwo-Give-Me-Chance-(CeeNaija.com).mp3',
+    songAvatar: '/Assets/images/Bidemi Olaoba ft. Mercy Chinwo - Give Me Chance 2.webp',
   });
 
   // UseState for Audio Progress
@@ -24,7 +24,7 @@ function App() {
 
   const handleMusicProgress = (e) => {
     setAudioProgress(e.target.value);
-    currentAudio.current.currentTime = e.target.value * currentAudio.current.duration / 100;
+    currentAudio.current.currentTime = (e.target.value * currentAudio.current.duration) / 100;
   };
 
   const handleAvatar = () => {
@@ -45,23 +45,59 @@ function App() {
 
   const musicAPI = [
     {
+      songName: 'Apna Bana Le - Full Audio',
+      songArtist: 'Bhediya _ Varun Dhawan, Kriti Sanon_ Sachin-Jigar,Arijit Singh,Amitabh B',
+      songSrc: '/Assets/songs/Apna Bana Le - Full Audio _ Bhediya _ Varun Dhawan, Kriti Sanon_ Sachin-Jigar,Arijit Singh,Amitabh B.webm',
+      songAvatar: '/Assets/images/image2.jpg',
+    },
+    {
+      songName: 'Runaway (Lyrics)',
+      songArtist: 'AURORA',
+      songSrc: '/Assets/songs/AURORA - Runaway (Lyrics).mp3',
+      songAvatar: '/Assets/images/image3.jpg',
+    },
+    {
+      songName: 'Baby doll [ slowed + reverb ]',
+      songArtist: 'meet bros ,Kanika Kapoor __ jr santu',
+      songSrc: '/Assets/songs/Baby doll [ slowed + reverb ] __ meet bros ,Kanika Kapoor __ jr santu.mp3',
+      songAvatar: '/Assets/images/image4.jpg',
+    },
+    {
+      songName: 'Catch Me If I Fall',
+      songArtist: 'NEFFEX',
+      songSrc: '/Assets/songs/Catch Me If I Fall - NEFFEX.mp3',
+      songAvatar: '/Assets/images/image5.jpg',
+    },
+    {
+      songName: 'SOCH(Slowed+Reverbed)',
+      songArtist: 'Hardy Sandhu',
+      songSrc: '/Assets/songs/SOCH(Slowed+Reverbed) __ Hardy Sandhu.webm',
+      songAvatar: '/Assets/images/image6.jpg',
+    },
+    {
+      songName: 'Inspired (Clean)',
+      songArtist: 'NEFFEX',
+      songSrc: '/Assets/songs/Inspired (Clean) - NEFFEX.mp3',
+      songAvatar: '/Assets/images/image7.jpg',
+    },
+    {
       songName: 'Give Me Chance - (CeeNaija.com).mp3',
       songArtist: 'Bidemi Olaoba ft. Mercy Chinwo',
       songSrc: '/Assets/songs/Bidemi-Olaoba-feat-Mercy-Chinwo-Give-Me-Chance-(CeeNaija.com).mp3',
-      songAvatar: '/Assets/images/Bidemi Olaoba ft. Mercy Chinwo - Give Me Chance 2.webp'
+      songAvatar: '/Assets/images/Bidemi Olaoba ft. Mercy Chinwo - Give Me Chance 2.webp',
     },
     {
       songName: 'City Of God',
       songArtist: 'Dunsin Oyekan',
       songSrc: '/Assets/songs/City-Of-God-Dunsin-Oyekan (1).mp3',
-      songAvatar: '/Assets/images/Dunsin Oyekan - City of God 2.jpg'
+      songAvatar: '/Assets/images/Dunsin Oyekan - City of God 2.jpg',
     },
     {
       songName: 'Ebenezer (Live)',
       songArtist: 'Nathaniel Bassey ft Victoria Orenze',
       songSrc: '/Assets/songs/Nathaniel-Bassey-Ft-Victoria-Orenze-Ebenezer-Live-(TrendyBeatz.com).mp3',
-      songAvatar: '/Assets/images/Ebenezer.jpg.jpg'
-    }
+      songAvatar: '/Assets/images/Ebenezer.jpg.jpg',
+    },
   ];
 
   const updateCurrentMusicDetails = (number) => {
@@ -74,15 +110,16 @@ function App() {
     });
     currentAudio.current.src = musicObject.songSrc;
     currentAudio.current.load();
-    // Ensure the new source is loaded
-    currentAudio.current.addEventListener('canplay', () => {
-      currentAudio.current.play();
-      setIsAudioPlaying(true);
-    }, { once: true }); 
-
+    currentAudio.current.addEventListener(
+      'canplay',
+      () => {
+        currentAudio.current.play();
+        setIsAudioPlaying(true);
+      },
+      { once: true }
+    );
   };
 
-  // Previous Song Function
   const handlePrevSong = () => {
     if (musicIndex <= 0) {
       setMusicIndex(musicAPI.length - 1);
@@ -104,37 +141,39 @@ function App() {
   };
 
   const handleAudioUpdate = () => {
-    // Update current time
     let currentMinutes = Math.floor(currentAudio.current.currentTime / 60);
     let currentSeconds = Math.floor(currentAudio.current.currentTime - currentMinutes * 60);
-    let formattedCurrentTime = `${currentMinutes < 10 ? '0' + currentMinutes : currentMinutes}:${currentSeconds < 10 ? '0' + currentSeconds : currentSeconds}`;
+    let formattedCurrentTime = `${currentMinutes < 10 ? '0' + currentMinutes : currentMinutes}:${
+      currentSeconds < 10 ? '0' + currentSeconds : currentSeconds
+    }`;
     setCurrentTime(formattedCurrentTime);
 
-    // Update total length
     let totalMinutes = Math.floor(currentAudio.current.duration / 60);
     let totalSeconds = Math.floor(currentAudio.current.duration - totalMinutes * 60);
-    let formattedTotalLength = `${totalMinutes < 10 ? '0' + totalMinutes : totalMinutes}:${totalSeconds < 10 ? '0' + totalSeconds : totalSeconds}`;
+    let formattedTotalLength = `${totalMinutes < 10 ? '0' + totalMinutes : totalMinutes}:${
+      totalSeconds < 10 ? '0' + totalSeconds : totalSeconds
+    }`;
     setTotalLength(formattedTotalLength);
 
-    // Update audio progress
     const progress = (currentAudio.current.currentTime / currentAudio.current.duration) * 100;
     setAudioProgress(progress);
   };
 
   useEffect(() => {
-    // Set initial total length when the component mounts
     if (currentAudio.current) {
       currentAudio.current.addEventListener('loadedmetadata', handleAudioUpdate);
     }
   }, []);
 
-  const vidArray = ['/Assets/videos/video1.mp4',
+  const vidArray = [
+    '/Assets/videos/video1.mp4',
     '/Assets/videos/video2.mp4',
     '/Assets/videos/video3.mp4',
     '/Assets/videos/video4.mp4',
     '/Assets/videos/video5.mp4',
     '/Assets/videos/video3.mp4',
-    '/Assets/videos/video7.mp4']; 
+    '/Assets/videos/video7.mp4',
+  ];
 
   const handleChangeBackground = () => {
     if (videoIndex >= vidArray.length - 1) {
@@ -142,16 +181,17 @@ function App() {
     } else {
       setVideoIndex(videoIndex + 1);
     }
-  }
+  };
 
   return (
     <div className="container">
-      <audio src={currentMusicDetails.songSrc}
-        ref={currentAudio} onEnded={handleNextSong}
-        onTimeUpdate={handleAudioUpdate}></audio>
-      <video src={vidArray[videoIndex]}
-        autoPlay muted loop 
-        className="backgroundVideo"></video>
+      <audio
+        src={currentMusicDetails.songSrc}
+        ref={currentAudio}
+        onEnded={handleNextSong}
+        onTimeUpdate={handleAudioUpdate}
+      ></audio>
+      <video src={vidArray[videoIndex]} autoPlay muted loop className="backgroundVideo"></video>
       <div className="blackScreen"></div>
       <div className="music-Container">
         <p className="musicPlayer">Faseal Music Player</p>
