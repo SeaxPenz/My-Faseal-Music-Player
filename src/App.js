@@ -12,7 +12,6 @@ function App() {
   // UseState for Audio Progress
   const [audioProgress, setAudioProgress] = useState(0);
   const [isAudioPlaying, setIsAudioPlaying] = useState(false);
-  const [avatarClassIndex, setAvatarClassIndex] = useState(0);
   const [musicIndex, setMusicIndex] = useState(0);
   const [currentTime, setCurrentTime] = useState('00:00');
   const [totalLength, setTotalLength] = useState('00:00');
@@ -32,7 +31,7 @@ function App() {
     songAvatar.classList.toggle('rotateAvatar');
   };
 
-  // Play Audio Function
+
   const handleAudioPlay = () => {
     if (currentAudio.current.paused) {
       currentAudio.current.play();
