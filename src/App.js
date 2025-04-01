@@ -198,7 +198,7 @@ function App() {
         <p className="music-Artist-Name">{currentMusicDetails.songArtist}</p>
         <img
           src={currentMusicDetails.songAvatar}
-          className={avatarClass[avatarClassIndex]}
+          className={avatarClass[avatarClass]}
           onClick={handleAvatar}
           alt="Song Avatar"
           id="songAvatar"
