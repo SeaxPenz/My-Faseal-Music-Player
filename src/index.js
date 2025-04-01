@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import * as serviceWorkerRegistration from './serviceWorkerRegistration'; //This code imports the service worker.
+// import * as serviceWorkerRegistration from './serviceWorkerRegistration'; //This code imports the service worker.
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
